@@ -7,6 +7,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel" placeholder="Ej. Manzanilla" autocomplete="on" autocorrect="on"></ion-searchbar>
+<ion-content fullscreen>
+<ion-searchbar (ionInput)="getNames($event)" showCancelButton="focus" cancelButtonText="Custom Cancel" placeholder="Ej. Manzanilla" autocomplete="on" autocorrect="on" >
+</ion-searchbar>
+<ion-item *ngFor="let planta of plantas" >
+<ion-list>
+<button ion-button color="secondary" full>
+ <p>{{planta.name}}</p>
+</button>
+</ion-list>
+</ion-item>
+
+<ion-card>
+<ion-card-content>
+  
+</ion-card-content>
+</ion-card>
 </ion-content>
