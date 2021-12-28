@@ -8,19 +8,23 @@
 </ion-header>
 
 <ion-content fullscreen>
-<ion-searchbar (ionInput)="getNames($event)" showCancelButton="focus" cancelButtonText="Custom Cancel" placeholder="Ej. Manzanilla" autocomplete="on" autocorrect="on" >
+<ion-searchbar (ionInput)="getNames($event)"
+cancelButtonText="Custom Cancel" placeholder="Ej. Manzanilla" autocomplete="on" autocorrect="on" >
 </ion-searchbar>
-<ion-item *ngFor="let planta of plantas" >
-<ion-list>
-<button ion-button color="secondary" full>
- <p>{{planta.name}}</p>
-</button>
-</ion-list>
-</ion-item>
 
-<ion-card>
-<ion-card-content>
-  
+<ion-list>
+<ion-card id="tarjetaplanta" *ngFor="let planta of plantas" (click)=" obtenerPlanta(planta)" >
+
+  <ion-card-header id="headerplantas" >
+<ion-card-title id="titplantas">
+  {{planta.name[0]}}
+</ion-card-title>
+</ion-card-header>
+
+<ion-card-content id="contentTarjeta">
+<img id="imgplanta" [src]="planta.imagen" fixed="14px"/>
 </ion-card-content>
 </ion-card>
+</ion-list>
+
 </ion-content>
