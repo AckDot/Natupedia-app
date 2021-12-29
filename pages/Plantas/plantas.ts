@@ -9,13 +9,14 @@ import {plants} from './data';
 export class PlantasPage{
 
   plantas: any[] = [];
-  constructor(public navCtrl: NavController) {
+  constructor(private navCtrl: NavController) {
     this.initializeItems();
   }
+
   initializeItems(){
     this.plantas = plants;
   }
-  
+
   getNames(ev) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -42,10 +43,6 @@ export class PlantasPage{
      informacion += "\n\n Contraindicaciones : \n"+ planta.contraindicaciones;
      console.log(informacion);   
      return (informacion);  
-}
-MostrarInfoPlanta(){
-
-  return informacion;
 }
 
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { PlantasPage } from '../Plantas/plantas';
-import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { DiagnosticoPage } from '../diagnostico/diagnostico';
 
