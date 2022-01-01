@@ -1,11 +1,36 @@
 <ion-header>
-<ion-navbar color="secondary">
-  <ion-title>Informacion de {{planta.name[0]}}</ion-title>
+<ion-navbar color="primary">
+  <ion-title>Informacion de {{planta.name[0]}} </ion-title>
 </ion-navbar>
 </ion-header>
 
-<ion-content padding (ionOutput)="obtenerPlanta(planta)">
+<ion-content>
+
+  <hr>
+  <ion-card  >
+
+  <ion-card-header >
+<ion-card-title >
+  {{planta.name[0].toUpperCase()}}
+</ion-card-title>
+</ion-card-header>
+
+<ion-card-content >
+<img id="imgplanta" [src]="planta.imagen"/>
+<hr>
+<h2>Descripcion</h2>
+<hr>
 <p>
- 
+{{planta.descripcion}}
 </p>
+<hr>
+<h2>Productos</h2>
+<br>
+<p>{{planta.productos}}</p>
+<hr>
+<h2>Contraindicaciones</h2>
+<p>{{planta.contraindicaciones}}</p>
+</ion-card-content>
+</ion-card>
+
 </ion-content>

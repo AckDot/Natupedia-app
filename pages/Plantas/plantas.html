@@ -13,7 +13,7 @@ cancelButtonText="Custom Cancel" placeholder="Ej. Manzanilla" autocomplete="on" 
 </ion-searchbar>
 
 <ion-list>
-<ion-card id="tarjetaplanta" *ngFor="let planta of plantas" (click)="goToInformacionPage()" >
+<ion-card id="tarjetaplanta" *ngFor="let planta of plantas" (click)="obtenerPlanta(planta)" >
 
   <ion-card-header id="headerplantas" >
 <ion-card-title id="titplantas">

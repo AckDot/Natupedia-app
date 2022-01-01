@@ -9,6 +9,9 @@ export class DiagnosticoPage {
   constructor(public navCtrl: NavController) {
     
   }
-  
+  getContent() {
+    return document.querySelector('ion-content');
+  }
 
+ 
 }

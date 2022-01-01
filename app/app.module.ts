@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PlantasPage } from '../pages/Plantas/plantas';
 import { DiagnosticoPage } from '../pages/diagnostico/diagnostico';
-import {InformacionPage} from '../pages/informacion/informacion'
+import {InformacionPage} from '../pages/informacion/informacion';
 
 @NgModule({
   declarations: [
