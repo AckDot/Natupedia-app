@@ -23,6 +23,7 @@ buscarenLista(){
   obtenerSeleccionCB(list) {
     // Reset items back to all of the items
     // set val to the value of the ev target
+    console.log(list);
      this.navCtrl.push(busquedaDiagnosticopage, { item: list });
 }
 

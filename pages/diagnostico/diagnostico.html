@@ -9,7 +9,7 @@
 
 <ion-content fullscreen>
   <section>
-    <ion-list>
+    <ion-list mode="ios">
       <ion-list-header>ELIJA LOS SINTOMAS </ion-list-header>
       <ion-item>
         <ion-checkbox color="secondary"></ion-checkbox>
@@ -47,7 +47,7 @@
       </ion-item>
     </ion-list>
 
-    <ion-list>
+    <ion-list mode='ios'>
       <ion-list-header> OTROS </ion-list-header>
       <ion-item>
         <ion-checkbox color="secondary"></ion-checkbox>
@@ -235,7 +235,7 @@
         <button
           ion-button
           color="secondary"
-          (click)="buscarenLista()"
+          (click)="obtenerSeleccionCB(list)"
           block
           round
           large
