@@ -16,7 +16,7 @@ export const plants = [
       "Cicatrices",
       "Heridas"
     ],
-    "contraindicaciones": "No deben tomar aloe vera: \n> Las mujeres embarazadas, ya que contiene algunos productos que pueden ser abortivos.\n> Los menores de 12 años \n> En caso de colitis ulcerosa, colon irritable o enfermedad de Crohn.\n> Quienes padecen hemorroides. \n> Antes o después de una intervención quirúrgica \n Aunque poco frecuente, algunas personas muy sensibles a esta planta han padecido problemas de hígado.\n Cuando la planta se usa de manera externa muy raramente trae problemas, aunque también en personas muy sensibles puede provocar reacciones cutáneas, como hinchazón o picor.\nEn estos casos debe dejar de consumirse la planta.",
+    "contraindicaciones": "No deben tomar aloe vera: \n\n > Las mujeres embarazadas, ya que contiene algunos productos que pueden ser abortivos.\n> Los menores de 12 años \n> En caso de colitis ulcerosa, colon irritable o enfermedad de Crohn.\n> Quienes padecen hemorroides. \n> Antes o después de una intervención quirúrgica \n Aunque poco frecuente, algunas personas muy sensibles a esta planta han padecido problemas de hígado.\n Cuando la planta se usa de manera externa muy raramente trae problemas, aunque también en personas muy sensibles puede provocar reacciones cutáneas, como hinchazón o picor.\nEn estos casos debe dejar de consumirse la planta.",
     "preparacion": "1. CORTA una hoja desde la base y lávala. RETIRA la punta y unos centímetros de la base. \n2. ELIMINA también los laterales donde se encuentran las espinas. \n3. RETIRA la piel superior y extrae el gel. \n4. LICUA junto con el agua. Reserva en un frasco o botella hermética y guarda en refrigeración hasta por una semana. "
   },
   {
