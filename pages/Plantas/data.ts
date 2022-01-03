@@ -36,6 +36,7 @@ export const plants = [
       "Heridas"
     ],
     "contraindicaciones": "No deben tomar Eucalipto : \n> Las personas que tomen medicamentos para bajar la glicemia deberían evitar la interacción con el eucalipto, porque este la reduce también.\n >Además, no es recomendable utilizarlo durante el embarazo y la lactancia sin antes obtener autorización médica, por cuanto podría causar problemas en las enzimas hepáticas del feto.\n>El eucalipto puede provocar reacciones alérgicas en la piel, en caso de aplicarse de forma directa y consuetudinaria en esta.",
+    
     "preparacion": "1. Primero poner una olla con agua \n2.Agregar el eucalipto, cuando el agua hierve.\n Se lo puede prepara tambien como balsamo , aceite ,enjuague bucal , aceites , cremas y caramelos . "
   },
   {

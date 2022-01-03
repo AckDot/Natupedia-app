@@ -1,51 +1,42 @@
 <ion-header>
-<ion-navbar color="primary">
-  <ion-title>Informacion de {{planta.name[0]}} </ion-title>
-</ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>Informacion de {{planta.name[0]}} </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <hr />
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-title> {{planta.name[0].toUpperCase()}} </ion-card-title>
+    </ion-card-header>
 
-  <hr>
-  <ion-card  >
-
-  <ion-card-header >
-<ion-card-title >
-  {{planta.name[0].toUpperCase()}}
-</ion-card-title>
-</ion-card-header>
-
-<ion-card-content >
-<img id="imgplanta" [src]="planta.imagen"/>
-<hr>
-<h2>Descripcion</h2>
-<hr>
-<p>
-{{planta.descripcion}}
-</p>
-<hr>
-<h2>Productos</h2>
-<br>
-<p>{{planta.productos}}</p>
-<hr>
-<h2>Contraindicaciones</h2>
-<p>{{planta.contraindicaciones}}</p>
-</ion-card-content>
-</ion-card>
-
-<ion-segment color="secondary" scrollable="true" value="map">
-<ion-segment-button value="call" >
-<ion-label>Call</ion-label>
-  <ion-icon name="call"></ion-icon>  
-</ion-segment-button>
-<ion-segment-button value="favorite" >
-  <ion-icon name="heart"></ion-icon>
-  <ion-label>Favorite</ion-label>
-</ion-segment-button>
-<ion-segment-button value="map" >
-  <ion-icon name="pin"></ion-icon>
-  <ion-label>Map</ion-label>
-</ion-segment-button>
-</ion-segment>
+    <ion-card-content>
+      <img id="imgplanta" [src]="planta.imagen" />
+      <hr />
+      <h2>Descripcion</h2>
+      <hr />
+      <p [innerHTML]="planta.descripcion"></p>
+      <hr />
+      <h2>Productos</h2>
+      <br />
+      <p>{{planta.productos}}</p>
+      <hr />
+      <h2>Contraindicaciones</h2>
+      <p [innerHTML]="planta.contraindicaciones"></p>
+      <h1>Preparacion</h1>
+      <p [innerHTML]="planta.preparacion"></p>
+    </ion-card-content>
+  </ion-card>
+    <ion-card>
+      <ion-card-title>
+        Usos
+      </ion-card-title>
+      <ion-chip *ngFor="let uso of usos">
+        <ion-icon color="dark" name="arrow-forward"></ion-icon>
+        <ion-label>{{uso}}</ion-label>      
+        <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
+      </ion-chip>
+    </ion-card>
 
 </ion-content>
