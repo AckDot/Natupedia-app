@@ -7,6 +7,7 @@ import { plants } from '../Plantas/data';
   templateUrl: 'diagnostico.html',
 })
 export class DiagnosticoPage {
+  cadena: string = '';
   sintomas = [
     { name: 'Gripe', checked: false },
     { name: 'Diarrea', checked: false },
@@ -65,7 +66,6 @@ export class DiagnosticoPage {
   getPlantas() {
     let plantasSeleccionadas = [];
     this.initializeItems();
-    console.log(this.SintomasSeleccionados);
     for (let index = 0; index < plants.length; index++) {
       for (let j = 0; j < plants[index].usos.length; j++) {
         let datoplants = plants[index].usos[j];
@@ -93,26 +93,18 @@ export class DiagnosticoPage {
   }
   ObtenerCadena() {
     let Plantas = this.getPlantas();
-    let cadena = '';
     for (let i = 0; i > Plantas.length; i++) {
-      cadena += '\n -' + Plantas[i] + ' >\n';
+      this.cadena += '\n -' + Plantas[i] + ' >\n';
     }
-    return cadena;
+    return this.cadena;
   }
 
-  presentAlertCheckbox() {
-    let alert = this.alertController.create({
+  presentAlert() {
+    this.ObtenerCadena();
+    const alert = this.alertController.create({
       title: 'Las plantas son :',
-      message: 'obtenerDatos',
+      message: 'this.cadena',
       buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'warning',
-          handler: () => {
-            console.log('Confirm Cancel');
-          },
-        },
         {
           text: 'Ok',
           handler: () => {
