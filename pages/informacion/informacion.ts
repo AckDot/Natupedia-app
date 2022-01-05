@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {plants} from '../Plantas/data';
+
 
 @Component({
   selector: 'page-informacion',
