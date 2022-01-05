@@ -18,12 +18,12 @@
           <h2>{{sintoma.name}}</h2>
         </ion-label>
       </ion-item>
-      <p>{{sintomas | json}}</p>
+      
       <ion-item>
         <button
           ion-button
           color="secondary"
-          (click)="obtenercantidadsintomas()"
+          (click)="presentAlertCheckbox()"
           block
           round
           large

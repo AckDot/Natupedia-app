@@ -8,7 +8,7 @@ import { plants } from '../Plantas/data';
 })
 export class DiagnosticoPage {
   sintomas = [
-    { name: 'Gripe', checked: true },
+    { name: 'Gripe', checked: false },
     { name: 'Diarrea', checked: false },
     { name: 'Vomito', checked: false },
     { name: 'Colicos', checked: false },
@@ -46,56 +46,69 @@ export class DiagnosticoPage {
     public navCtrl: NavController,
     public alertController: AlertController
   ) {
-    this.SintomasSeleccionados = this.obtenerSintomas();
-  }
-  obtenercantidadsintomas() {
-    console.log(this.sintomas.length);
-    console.log(this.sintomas[1]);
-  }
-  obtenerSintomas() {
-    let aux = [];
-    for (let i = 0; i < this.sintomas.length; i++) {
-      if (this.sintomas[i].checked == true) {
-        aux.push(this.sintomas[i].name);
-      }
-    }
-    console.log(aux);
-    return aux;
-  }
-  getPlantas() {
-    let plantasSeleccionadas = [];
-    console.log(this.SintomasSeleccionados);
-    for(let index = 0 ; index < plants.length; index++){
-      for(let j = 0 ; index < plants[index].usos.length ; j++)
-      if ( plants[index] = this.SintomasSeleccionados[index]) {
-        plantasSeleccionadas = plants.filter((item) => {
-          return item.name[0].toLowerCase().indexOf(val.toLowerCase()) > -1;
-        });
-      }
-    }
-   
+    this.initializeItems();
   }
 
-  async presentAlertCheckbox() {
-    const alert = this.alertController.create({
-      title: 'Checkbox',
-      inputs: [
-        {
-          name: 'checkbox1',
-          type: 'checkbox',
-          label: 'Checkbox 1',
-          value: 'value1',
-          handler: () => {
-            console.log('Checkbox 1 selected');
-          },
-          checked: true,
-        },
-      ],
+  initializeItems() {
+    this.SintomasSeleccionados = this.obtenerSintomas();
+  }
+  obtenerSintomas() {
+    let contenedor = [];
+    for (let i = 0; i < this.sintomas.length; i++) {
+      if (this.sintomas[i].checked == true) {
+        contenedor.push(this.sintomas[i].name);
+      }
+    }
+    return contenedor;
+  }
+
+  getPlantas() {
+    let plantasSeleccionadas = [];
+    this.initializeItems();
+    console.log(this.SintomasSeleccionados);
+    for (let index = 0; index < plants.length; index++) {
+      for (let j = 0; j < plants[index].usos.length; j++) {
+        let datoplants = plants[index].usos[j];
+        let datoSintSeleccionados = this.SintomasSeleccionados[j];
+        if ((datoplants = datoSintSeleccionados)) {
+          plantasSeleccionadas.push(plants[index].name[0]);
+        }
+      }
+    }
+    console.log(plantasSeleccionadas);
+    plantasSeleccionadas = this.FiltrarResultados();
+    return plantasSeleccionadas;
+  }
+
+  FiltrarResultados() {
+    let obtenerPlantas = this.getPlantas();
+    let resultado = obtenerPlantas.reduce((a, e) => {
+      if (!a.find((d) => d == e)) {
+        a.push(e);
+      }
+
+      return a;
+    }, []);
+    return resultado;
+  }
+  ObtenerCadena() {
+    let Plantas = this.getPlantas();
+    let cadena = '';
+    for (let i = 0; i > Plantas.length; i++) {
+      cadena += '\n -' + Plantas[i] + ' >\n';
+    }
+    return cadena;
+  }
+
+  presentAlertCheckbox() {
+    let alert = this.alertController.create({
+      title: 'Las plantas son :',
+      message: 'obtenerDatos',
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
-          cssClass: 'secondary',
+          cssClass: 'warning',
           handler: () => {
             console.log('Confirm Cancel');
           },
@@ -109,6 +122,6 @@ export class DiagnosticoPage {
       ],
     });
 
-    await alert.present();
+    alert.present();
   }
 }
