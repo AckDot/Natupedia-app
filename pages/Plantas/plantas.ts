@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {plants} from './data';
+import { plants } from './data';
+import { InformacionPage } from '../informacion/informacion';
 
-import {InformacionPage} from '../informacion/informacion';
 @Component({
   selector: 'page-plantas',
   templateUrl: 'plantas.html',
-  styleUrls: ['stilos.css']
+  styleUrls: ['stilos.css'],
 })
-export class PlantasPage{
-
+export class PlantasPage {
   plantas: any[] = [];
   constructor(private navCtrl: NavController) {
     this.initializeItems();
   }
 
-  initializeItems(){
+  initializeItems() {
     this.plantas = plants;
   }
 
@@ -25,19 +24,18 @@ export class PlantasPage{
 
     // set val to the value of the ev target
     var val = ev.target.value;
- console.log(val);
+    console.log(val);
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.plantas = plants.filter((item) => {
-        return (item.name[0].toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+        return item.name[0].toLowerCase().indexOf(val.toLowerCase()) > -1;
+      });
     }
   }
-  
+
   obtenerPlanta(planta) {
     // Reset items back to all of the items
     // set val to the value of the ev target
-     this.navCtrl.push(InformacionPage, { item: planta });
-}
-
+    this.navCtrl.push(InformacionPage, { item: planta });
+  }
 }

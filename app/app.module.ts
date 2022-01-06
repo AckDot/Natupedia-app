@@ -9,6 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PlantasPage } from '../pages/Plantas/plantas';
 import { DiagnosticoPage } from '../pages/diagnostico/diagnostico';
 import {InformacionPage} from '../pages/informacion/informacion';
+import { consultaDiagnosticoPage } from '../pages/consultaDiagnostico/consultaDiagnostico';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {InformacionPage} from '../pages/informacion/informacion';
     TabsPage,
     PlantasPage,
     DiagnosticoPage,
-    InformacionPage
+    InformacionPage,
+    consultaDiagnosticoPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import {InformacionPage} from '../pages/informacion/informacion';
     TabsPage,
     PlantasPage,
     DiagnosticoPage,
-    InformacionPage
+    InformacionPage,
+    consultaDiagnosticoPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}

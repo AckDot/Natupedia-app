@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Las plantas para sus sintomas son:</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let planta of plantas" (click)="obtenerPlanta(planta)">
+      <ion-card-header id="headerplantas">
+        <ion-card-title id="titplantas"> {{planta}} </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Es una planta que ...</p>
+        <p></p
+      ></ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

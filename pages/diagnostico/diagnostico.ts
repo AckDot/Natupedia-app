@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { plants } from '../Plantas/data';
+import { consultaDiagnosticoPage } from '../consultaDiagnostico/consultaDiagnostico';
 
 @Component({
   selector: 'page-diagnostico',
   templateUrl: 'diagnostico.html',
 })
 export class DiagnosticoPage {
-  cadena: string = '';
+  plantas ;
+  SintomasSeleccionados: any[] = [];
   sintomas = [
     { name: 'Gripe', checked: false },
     { name: 'Diarrea', checked: false },
@@ -42,17 +44,15 @@ export class DiagnosticoPage {
     { name: 'Migrañas', checked: false },
   ];
 
-  SintomasSeleccionados: any[] = [];
-  constructor(
-    public navCtrl: NavController,
-    public alertController: AlertController
-  ) {
+
+  constructor(private navCtrl: NavController) {
     this.initializeItems();
   }
 
   initializeItems() {
     this.SintomasSeleccionados = this.obtenerSintomas();
   }
+
   obtenerSintomas() {
     let contenedor = [];
     for (let i = 0; i < this.sintomas.length; i++) {
@@ -75,8 +75,8 @@ export class DiagnosticoPage {
         }
       }
     }
-    console.log(plantasSeleccionadas);
     plantasSeleccionadas = this.FiltrarResultados();
+    console.log(plantasSeleccionadas);
     return plantasSeleccionadas;
   }
 
@@ -91,29 +91,8 @@ export class DiagnosticoPage {
     }, []);
     return resultado;
   }
-  ObtenerCadena() {
-    let Plantas = this.getPlantas();
-    for (let i = 0; i > Plantas.length; i++) {
-      this.cadena += '\n -' + Plantas[i] + ' >\n';
-    }
-    return this.cadena;
-  }
 
-  presentAlert() {
-    this.ObtenerCadena();
-    const alert = this.alertController.create({
-      title: 'Las plantas son :',
-      message: 'this.cadena',
-      buttons: [
-        {
-          text: 'Ok',
-          handler: () => {
-            console.log('Confirm Ok');
-          },
-        },
-      ],
-    });
-
-    alert.present();
+  MandarDatos() {
+    this.navCtrl.push(consultaDiagnosticoPage , { item: this.getPlantas() });
   }
 }
