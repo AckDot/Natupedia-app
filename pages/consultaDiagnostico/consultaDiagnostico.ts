@@ -5,13 +5,12 @@ import { InformacionPage } from '../informacion/informacion';
 
 @Component({
   selector: 'page-consultaDiagnostico',
-  templateUrl: 'consultaDiagnostico.html',
-  styleUrls: ['consultaDiagnostico.css']
+  templateUrl: 'consultaDiagnostico.html'
 })
 export class consultaDiagnosticoPage {
-plantas; 
+plants; 
   constructor(public navCtrl: NavController , public params :NavParams) {
-    this.plantas = params.data.item;
+    this.plants = params.data.item;
   }
   obtenerPlanta(planta) {
     // Reset items back to all of the items

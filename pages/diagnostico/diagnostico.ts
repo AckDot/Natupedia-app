@@ -8,7 +8,7 @@ import { consultaDiagnosticoPage } from '../consultaDiagnostico/consultaDiagnost
   templateUrl: 'diagnostico.html',
 })
 export class DiagnosticoPage {
-  plantas ;
+  plantasS ;
   SintomasSeleccionados: any[] = [];
   sintomas = [
     { name: 'Gripe', checked: false },
@@ -89,10 +89,12 @@ export class DiagnosticoPage {
 
       return a;
     }, []);
+    console.log(resultado);
     return resultado;
   }
 
   MandarDatos() {
-    this.navCtrl.push(consultaDiagnosticoPage , { item: this.getPlantas() });
+    this.plantasS = this.getPlantas()
+    this.navCtrl.push(consultaDiagnosticoPage , { item:  this.plantasS});
   }
 }

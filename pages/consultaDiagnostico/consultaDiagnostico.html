@@ -6,9 +6,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let planta of plantas" (click)="obtenerPlanta(planta)">
+    <ion-card *ngFor="let plant of plants" (click)="obtenerPlanta(plant)">
       <ion-card-header id="headerplantas">
-        <ion-card-title id="titplantas"> {{planta}} </ion-card-title>
+        <ion-card-title id="titplantas"> Planta : {{plant}} </ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
