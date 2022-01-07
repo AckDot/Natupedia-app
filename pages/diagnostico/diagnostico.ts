@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { plants } from '../Plantas/data';
 import { consultaDiagnosticoPage } from '../consultaDiagnostico/consultaDiagnostico';
+import { dataPlant } from '../Plantas/data';
 
 @Component({
   selector: 'page-diagnostico',
   templateUrl: 'diagnostico.html',
 })
 export class DiagnosticoPage {
-  plantasS ;
   SintomasSeleccionados: any[] = [];
   sintomas = [
     { name: 'Gripe', checked: false },
@@ -44,10 +44,7 @@ export class DiagnosticoPage {
     { name: 'Migrañas', checked: false },
   ];
 
-
-  constructor(private navCtrl: NavController) {
-    this.initializeItems();
-  }
+  constructor(public navCtrl: NavController) {}
 
   initializeItems() {
     this.SintomasSeleccionados = this.obtenerSintomas();
@@ -56,45 +53,58 @@ export class DiagnosticoPage {
   obtenerSintomas() {
     let contenedor = [];
     for (let i = 0; i < this.sintomas.length; i++) {
-      if (this.sintomas[i].checked == true) {
+      if (this.sintomas[i].checked === true) {
         contenedor.push(this.sintomas[i].name);
       }
     }
+    console.log(contenedor);
     return contenedor;
   }
 
   getPlantas() {
-    let plantasSeleccionadas = [];
+    let plantasSeleccionadas: any[] = [];
     this.initializeItems();
-    for (let index = 0; index < plants.length; index++) {
-      for (let j = 0; j < plants[index].usos.length; j++) {
-        let datoplants = plants[index].usos[j];
-        let datoSintSeleccionados = this.SintomasSeleccionados[j];
-        if ((datoplants = datoSintSeleccionados)) {
-          plantasSeleccionadas.push(plants[index].name[0]);
+    for (let i = 0; i < this.SintomasSeleccionados.length; i++) {
+      //iterar cada sintoma , luego
+
+      console.log(
+        'estamos verificando el sintoma:' + this.SintomasSeleccionados[i]
+      );
+
+      for (let index = 0; index < plants.length; index++) {
+        //hara la iteracion de cada planta de la data global
+        console.log(' planta : ' + plants[index].name);
+        for (let j = 0; j < plants[index].usos.length; j++) {
+          //iteracion de los usos de una planta
+          console.log('estamos iterando el uso:' + plants[index].usos[j]);
+          if (plants[index].usos[j] == this.SintomasSeleccionados[i]) {
+            console.log(
+              'se agregara esta planta al array : ' + plants[index].name[0]
+            );
+            plantasSeleccionadas.push(plants[index].name[0]);
+          }
         }
       }
     }
-    plantasSeleccionadas = this.FiltrarResultados();
-    console.log(plantasSeleccionadas);
+
+    console.log('antes de filtrar : ' + plantasSeleccionadas);
+
     return plantasSeleccionadas;
   }
 
   FiltrarResultados() {
-    let obtenerPlantas = this.getPlantas();
-    let resultado = obtenerPlantas.reduce((a, e) => {
-      if (!a.find((d) => d == e)) {
-        a.push(e);
-      }
-
-      return a;
-    }, []);
-    console.log(resultado);
-    return resultado;
+    let plantaRepetidas = this.getPlantas();
+    let nuevoVector = plantaRepetidas.filter(function (val, ind, vec) {
+      return vec.indexOf(val) == ind;
+    });
+    console.log('Filtrado : ' + nuevoVector);
+    return nuevoVector;
   }
 
   MandarDatos() {
-    this.plantasS = this.getPlantas()
-    this.navCtrl.push(consultaDiagnosticoPage , { item:  this.plantasS});
+    let resultados = this.FiltrarResultados();
+    this.navCtrl.push(consultaDiagnosticoPage, {
+      item: resultados,
+    });
   }
 }

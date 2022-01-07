@@ -12,9 +12,10 @@ plants;
   constructor(public navCtrl: NavController , public params :NavParams) {
     this.plants = params.data.item;
   }
-  obtenerPlanta(planta) {
+
+  obtenerPlanta(plant) {
     // Reset items back to all of the items
     // set val to the value of the ev target
-    this.navCtrl.push(InformacionPage, { item: planta });
+    this.navCtrl.push(InformacionPage, { item: plant });
   }
 }

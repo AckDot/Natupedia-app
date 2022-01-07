@@ -50,7 +50,7 @@ export const plants = [
       "Colicos",
       "Tos",
       "Gripe",
-      "Vomitos",
+      "Vomito",
       "Nauseas",
       "Gases",
       "Perdida de apetito",
