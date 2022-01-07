@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { data } from '../Plantas/data';
+import { plants } from '../Plantas/data';
 import { InformacionPage } from '../informacion/informacion';
 
 @Component({
@@ -8,13 +8,13 @@ import { InformacionPage } from '../informacion/informacion';
   templateUrl: 'consultaDiagnostico.html',
 })
 export class consultaDiagnosticoPage {
-  plants;
+  plantitas;
   constructor(public navCtrl: NavController, public params: NavParams) {
-    this.plants = params.data.item;
+    this.plantitas = params.data.item;
   }
 
   obtenerPlanta(planta) {
-    let plant = data.filter( dat => dat.name[0]== planta);
+    let plant = plants.filter( plant => plant.name == planta);
     console.log(plant);
     this.navCtrl.push(InformacionPage, { item: plant });
   }
