@@ -6,7 +6,7 @@
 
 <ion-content>
   <hr />
-  <ion-card >
+  <ion-card  color="dark">
     <ion-card-header>
       <ion-card-title> {{planta.name[0].toUpperCase()}} </ion-card-title>
     </ion-card-header>
@@ -20,7 +20,7 @@
       <hr />
       <h2>Productos</h2>
       <br />
-      <p>{{planta.productos}}</p>
+      <p [innerHTML]="planta.productos"></p>
       <hr />
       <h2>Contraindicaciones</h2>
       <p [innerHTML]="planta.contraindicaciones"></p>

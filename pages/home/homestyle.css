@@ -1,14 +1,19 @@
 #cartaPresentacion{
   box-shadow: 16px 14px 20px #0000008c;
   margin: 0%;
-  padding: 0;
+  padding: 0%;
   width: auto;
-  height: 105%;
+  height: auto;
+  background-color: #359A9E;
+  border-radius: 20px;
 }
 #cartaPresentacion1{
   padding: 10px;
   box-shadow: 16px 14px 20px #0000008c;
-  border-style: solid;
-  border-color: #00ff88;
-  height: 95%;
+  background-color: #2D3DD2;
+  height: auto;
+
+}
+#content{
+background-color: #2D3DD2;
 }

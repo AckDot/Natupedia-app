@@ -6,11 +6,17 @@
 
 <ion-content>
   <ion-list>
-    <ion-card color="dark" *ngFor="let plantita of plantitas" (click)="obtenerPlanta(plantita)">
+    <ion-card color="dark" *ngFor="let plantita of plantitas" (click)="mensaje()">
       <ion-card-header >
-        <ion-card-title > Planta : {{plantita}} </ion-card-title>
+        <ion-card-title >{{plantita.toUpperCase()}} </ion-card-title>
       </ion-card-header>
 
     </ion-card>
+    
   </ion-list>
+  <ion-item>
+  <ion-card>
+<p>{{plantita | json}}</p>
+</ion-card>
+</ion-item>
 </ion-content>
