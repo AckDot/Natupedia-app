@@ -1,6 +1,7 @@
 #tarjetaplanta {
  border-radius: 20px;
- height: 300px;
+ height: 200px;
+ width: auto;
  box-shadow: 16px 14px 20px #0000008c;
 }
 #headerplantas{
@@ -27,5 +28,13 @@ height: auto;
   font-weight: bold;
 }
 #barrabusqueda{
-
+  background-color: #393A10;
+}
+#contenido{
+  background-color: #28ba62;
+}
+#contenido2{
+  height: min-content;
+  background-color: #393A10;
+  text-align:center;
 }

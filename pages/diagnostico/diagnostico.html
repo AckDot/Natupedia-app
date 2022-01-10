@@ -8,11 +8,12 @@
 </ion-header>
 
 <ion-content >
-  <section >
-    <ion-list mode="ios">
+  
+    <ion-list>
+      <hr>
       <ion-list-header>ELIJA LOS SINTOMAS </ion-list-header>
 
-      <ion-item *ngFor='let sintoma of sintomas'>
+      <ion-item id="contenido" *ngFor='let sintoma of sintomas'>
         <ion-checkbox [(ngModel)]="sintoma.checked" color="secondary"></ion-checkbox>
         <ion-label>
           <h2>{{sintoma.name}}</h2>
@@ -33,5 +34,5 @@
         </button>
       </ion-item>
     </ion-list>
-  </section>
+ 
 </ion-content>

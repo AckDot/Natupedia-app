@@ -4,10 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="contenido">
   <hr />
-  <ion-card  color="dark">
-    <ion-card-header>
+
+  <ion-card id="cartainfo" color="dark">
+    <ion-card-header  >
       <ion-card-title> {{planta.name[0].toUpperCase()}} </ion-card-title>
     </ion-card-header>
 
@@ -28,15 +29,15 @@
       <p [innerHTML]="planta.preparacion"></p>
     </ion-card-content>
   </ion-card>
-    <ion-card>
-      <ion-card-title>
-        Usos
-      </ion-card-title>
-      <ion-chip *ngFor="let uso of usos">
-        <ion-icon color="dark" name="arrow-forward"></ion-icon>
-        <ion-label>{{uso}}</ion-label>      
-        <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
-      </ion-chip>
-    </ion-card>
 
+  <ion-card color="dark" id="cartaUsos">
+    <ion-card-header>
+      <ion-card-title> Usos</ion-card-title>
+    </ion-card-header>
+    <ion-chip color="dark" *ngFor="let uso of usos">
+      <ion-icon color="dark" name="arrow-forward"></ion-icon>
+      <ion-label>{{uso}}</ion-label>
+      <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
+    </ion-chip>
+  </ion-card>
 </ion-content>

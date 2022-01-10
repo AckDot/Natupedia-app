@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      <ion-icon name="leaf"></ion-icon>
+      <ion-icon name="ios-leaf"></ion-icon>
       Plantas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content id="contenido" fullscreen>
   <ion-searchbar
     id="barrabusqueda"
     (ionInput)="getNames($event)"
@@ -28,7 +28,10 @@
       </ion-card-header>
 
       <ion-card-content id="contentTarjeta">
-        <img id="imgplanta" [src]="planta.imagen" />
+        <img id="imgplanta" [src]="planta.imagen"  />
+      </ion-card-content >
+      <ion-card-content id="contenido2">
+        <ion-icon color="light" name="expand" slot="end" size="small"></ion-icon>
       </ion-card-content>
     </ion-card>
   </ion-list>

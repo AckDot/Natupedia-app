@@ -6,6 +6,7 @@ import { InformacionPage } from '../informacion/informacion';
 @Component({
   selector: 'page-consultaDiagnostico',
   templateUrl: 'consultaDiagnostico.html',
+  styleUrls: ['consulta.css'],
 })
 export class consultaDiagnosticoPage {
   plantitas;

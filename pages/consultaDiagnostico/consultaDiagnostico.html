@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>Las plantas para sus sintomas son:</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>PUEDE USAR:</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="contenido">
   <ion-list>
-    <ion-card color="dark" *ngFor="let plantita of plantitas" (click)="mensaje()">
+    <ion-card id="carta" color="dark" *ngFor="let plantita of plantitas" (click)="mensaje()">
       <ion-card-header >
         <ion-card-title >{{plantita.toUpperCase()}} </ion-card-title>
       </ion-card-header>
@@ -14,9 +14,4 @@
     </ion-card>
     
   </ion-list>
-  <ion-item>
-  <ion-card>
-<p>{{plantita | json}}</p>
-</ion-card>
-</ion-item>
 </ion-content>

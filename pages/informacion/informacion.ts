@@ -4,7 +4,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-informacion',
-  templateUrl: 'informacion.html'
+  templateUrl: 'informacion.html',
+  styleUrls: ['informacion.css']
 })
 export class InformacionPage {
 planta; 
