@@ -4,12 +4,14 @@
 #cartaUsos{
   border-radius: 20px;
   align-items: center;
+  border-style: outset;
   justify-content: center;
   padding: 20px;
   background-color : #9C5C9C;
 }
 #cartainfo{
  border :solid;
+ border-radius: 10px;
 }
 #imgplanta{
   border-radius: 10px;

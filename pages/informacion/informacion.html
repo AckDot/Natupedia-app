@@ -8,7 +8,7 @@
   <hr />
 
   <ion-card id="cartainfo" color="dark">
-    <ion-card-header  >
+    <ion-card-header>
       <ion-card-title> {{planta.name[0].toUpperCase()}} </ion-card-title>
     </ion-card-header>
 
@@ -25,6 +25,7 @@
       <hr />
       <h2>Contraindicaciones</h2>
       <p [innerHTML]="planta.contraindicaciones"></p>
+      <hr />
       <h1>Preparacion</h1>
       <p [innerHTML]="planta.preparacion"></p>
     </ion-card-content>

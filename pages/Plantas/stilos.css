@@ -4,24 +4,32 @@
  width: auto;
  box-shadow: 16px 14px 20px #0000008c;
 }
+#tarjetaplanta:hover {
+ border-style: solid;
+ border-color: #38ff88;
+}
 #headerplantas{
-position: static;
+  position: static;
 background-color: #393A10;
 height: 40px;
 width: 100%;
 padding-top: 0%;
 padding-left: 15%;
 padding-bottom: 10px;
+text-align: left;
 margin-top: 0;
 }
 #contentTarjeta{
   width: 100%;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 #imgplanta{
 width: 100%;
 height: auto;
+margin:0%;
+text-align: center;
 }
 #titplantas{
   color: white;
@@ -32,9 +40,5 @@ height: auto;
 }
 #contenido{
   background-color: #28ba62;
-}
-#contenido2{
-  height: min-content;
-  background-color: #393A10;
-  text-align:center;
+  position: absolute;
 }
