@@ -1,13 +1,10 @@
-#contenido{
-  background-color: #4C4DC5;
-}
+
 #cartaUsos{
   border-radius: 20px;
   align-items: center;
   border-style: outset;
   justify-content: center;
   padding: 20px;
-  background-color : #9C5C9C;
 }
 #cartainfo{
  border :solid;

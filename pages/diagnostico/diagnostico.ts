@@ -5,7 +5,8 @@ import { consultaDiagnosticoPage } from '../consultaDiagnostico/consultaDiagnost
 
 @Component({
   selector: 'page-diagnostico',
-  templateUrl: 'diagnostico.html'
+  templateUrl: 'diagnostico.html',
+  styleUrls: ['diagnostico.css']
 })
 export class DiagnosticoPage {
   SintomasSeleccionados: any[] = [];
