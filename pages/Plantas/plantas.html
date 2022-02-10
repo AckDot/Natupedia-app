@@ -16,7 +16,14 @@
     autocorrect="on"
   >
   </ion-searchbar>
-
+  <ion-item id="chip" >
+    <ion-chip  color="secondary">
+      <p>
+        SE RECOMIENDA NO DEPENDER DE LA INFORMACION MOSTRADA Y CONSIDERE ACUDIR
+        A UN MEDICO EN CASO DE QUE SUS SINTOMAS EMPEOREN.
+      </p>
+    </ion-chip>
+  </ion-item>
   <ion-list>
     <ion-card
       id="tarjetaplanta"
@@ -28,8 +35,8 @@
       </ion-card-header>
 
       <ion-card-content id="contentTarjeta">
-        <img id="imgplanta" [src]="planta.imagen"  />
-      </ion-card-content >
+        <img id="imgplanta" [src]="planta.imagen" />
+      </ion-card-content>
     </ion-card>
   </ion-list>
 </ion-content>
